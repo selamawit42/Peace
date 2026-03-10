@@ -1,51 +1,95 @@
 #work {
-  padding: 2rem 1rem;
-  max-width: 1000px;
-  margin: auto;
-  text-align: center;
-  margin-top: 5%;
+    width: 100%;
 }
 
 .work-grid {
-  display: grid;
-  gap: 1.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    width: 100%;
 }
 
 .work-card {
-  background-color: #1a1a1a; /* dark box */
-  border-left: 5px solid #6f4f28; /* brown accent */
-  padding: 1.5rem;
-  border-radius: 12px;
-  color: white;
-  transition: transform 0.3s, box-shadow 0.3s;
+    background: var(--surface-color);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 1.5rem;
+    padding: 2.5rem;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.work-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--accent-gradient);
+    opacity: 0;
+    transition: opacity 0.3s;
 }
 
 .work-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    transform: translateX(10px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+    border-color: rgba(var(--primary-rgb), 0.3);
+}
+
+.work-card:hover::before {
+    opacity: 1;
 }
 
 .work-card h3 {
-  margin: 0 0 0.5rem;
-  color: #d9b382; /* soft brown for role */
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
 }
 
 .work-card h4 {
-  margin: 0 0 0.3rem;
-  font-weight: 400;
-  color: #fff;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-main);
 }
 
 .work-card .dates {
-  font-size: 0.85rem;
-  color: #ccc;
-  display: block;
-  margin-bottom: 0.8rem;
+    display: inline-block;
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+    padding: 0.4rem 1rem;
+    background: rgba(var(--secondary-rgb), 0.1);
+    border-radius: 2rem;
+    font-weight: 500;
 }
 
 .work-card p {
-  font-size: 0.95rem;
-  line-height: 1.5;
-  color: #eee;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+}
+
+@media screen and (max-width: 768px) {
+    .work-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .work-card {
+        padding: 1.5rem;
+    }
+
+    .work-card h3 {
+        font-size: 1.4rem;
+    }
+
+    .work-card h4 {
+        font-size: 1.1rem;
+    }
 }

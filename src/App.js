@@ -1,3 +1,4 @@
+import './App.css';
 import Navbar from "./NavBar/navbar";
 import Intro from './Intro/intro';
 import Skills from "./Skills/skills";
@@ -15,13 +16,13 @@ function App() {
             <Intro />
             <Skills />
             <Education />
-            <Projects/>
-            <Works/>
-            <Certifications/>
+            <Projects />
+            <Works />
+            <Certifications />
             <Contact />
             <Footer />
-           
-           
+
+
         </div>
     );
 }

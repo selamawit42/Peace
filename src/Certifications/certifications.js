@@ -22,7 +22,7 @@ const Certifications = () => {
             image: C3,
             description: 'Completed a professional Java course on Mind Luster, covering OOP, GUI, and backend programming.'
         },
-          {
+        {
             title: 'React',
             image: C4,
             description: 'Completed a professional Java course on Mind Luster, covering OOP, GUI, and backend programming.'
@@ -31,7 +31,7 @@ const Certifications = () => {
 
     return (
         <section id="certifications" className="section">
-            <h2>Certifications</h2>
+            <h2 className="section-title">Certifications</h2>
             <div className="cert-grid">
                 {certifications.map((cert, index) => (
                     <div className="cert-card" key={index}>

@@ -1,140 +1,196 @@
-
-body {
-    background: rgb(0, 0, 0);
-    color: rgb(253, 251, 251);
-    overflow: hidden;
-    overflow-y: scroll;
-    border-style: groove;
-    border-color: aliceblue;
+.navbar {
+    position: fixed;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 1200px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    border-radius: 3rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
-.navbar {
-    background: rgb(63, 61, 61);
-    height: 9rem;
-    width: 100vw;
-    max-width:100rem;
-    margin: 0 auto;
-    padding: 1rem 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: sticky;
+.navbar.scrolled {
+    background: var(--surface-color);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     top: 0;
-    z-index: 3;
-    border-radius: 2px;
-    border-style: groove;
-    border-color: #fff;
+    width: 100%;
+    max-width: none;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+}
+
+.nav-container {
+    width: 100%;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .logo {
-    object-fit: cover;
-    height: 3rem;
-    width: 4rem;
+    height: 2.5rem;
+    object-fit: contain;
+    transition: transform 0.3s ease;
 }
 
+.logo:hover {
+    transform: scale(1.05);
+}
 
+.desktopMenu {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    list-style: none;
+}
+
+.desktopMenu li a {
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: var(--hover-transition);
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+.desktopMenu li a:hover {
+    color: var(--text-main);
+}
+
+.desktopMenu li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent-gradient);
+    transition: var(--hover-transition);
+    border-radius: 2px;
+}
+
+.desktopMenu li a:hover::after {
+    width: 100%;
+}
 
 .desktopMenuBtn {
-    background: rgb(54, 54, 54);
-    color: rgb(241, 237, 247);
-    border: groove;
+    background: var(--accent-gradient);
+    color: white;
+    border: none;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0 1rem;
-    border-radius: 3rem;
-    font-family:fantasy;
- 
-
+    padding: 0.75rem 1.5rem;
+    border-radius: 2rem;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: var(--hover-transition);
+    gap: 0.5rem;
+    box-shadow: 0 4px 15px rgba(var(--primary-rgb), 0.3);
 }
-.desktopMenuBtn :hover{
-    color:yellow;}
+
+.desktopMenuBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(var(--primary-rgb), 0.4);
+}
 
 .desktopMenuImg {
-    object-fit: cover;
-    height: 1rem;
-    width: 1rem;
-    margin: 1rem;
+    height: 1.2rem;
+    width: 1.2rem;
+    filter: brightness(0) invert(1);
 }
-
 
 .mobMenu {
     display: none;
-    object-fit: cover;
-    height: 1.8rem;
+    height: 2rem;
+    cursor: pointer;
+    filter: invert(1);
+    transition: transform 0.3s ease;
+}
+
+.mobMenu:active {
+    transform: scale(0.9);
 }
 
 .navMenu {
     position: absolute;
-    top: 4rem;
-    right: 2rem;
-    z-index: 2;
+    top: 6rem;
+    right: 1rem;
+    z-index: 999;
     display: flex;
     flex-direction: column;
-    padding: 0.5rem;
-    height:fit-content;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: var(--surface-color);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    border-radius: 1.5rem;
     min-width: 15rem;
-    background: rgb(40, 40, 40);
-    border-radius: 1rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    animation: slideIn 0.3s ease forwards;
 }
 
-
-
-@media screen and (max-width:720px) {
-    .mobMenu {
-        display: flex;
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
     }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.navMenu li {
+    list-style: none;
+}
+
+.navMenu li a {
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: 500;
+    display: block;
+    padding: 0.5rem 0;
+    transition: var(--hover-transition);
+}
+
+.navMenu li a:hover {
+    color: var(--primary-color);
+    transform: translateX(5px);
+}
+
+@media screen and (max-width: 968px) {
+    .desktopMenu li a {
+        font-size: 0.9rem;
+    }
+
+    .desktopMenu {
+        gap: 1rem;
+    }
+}
+
+@media screen and (max-width: 820px) {
     .desktopMenu {
         display: none;
     }
-    .desktopMenuBtn {
-        display: none;
+
+    .mobMenu {
+        display: block;
     }
 }
-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    text-align: right;
-    border:2px;
-}
-nav ul li {
-    display: inline-block;
-    margin-right: 20px;
-}
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    position: relative;
-}
-a:active{
-    text-decoration: underline;
-}
-a{
-    color: #fff;
-    cursor: pointer;
-    text-decoration:none;
-}
- a:hover{
-    color: yellow;
-    transition: width 0.3s;
-}
-header a:hover::before {
-    width: 100%; 
-}
-ul a::before {
-    content: '';
-    position: absolute;
-    bottom: -2px; 
-    left: 0; 
-    width: 0; 
-    height: 2px;
-    background-color: yellow; 
-    transition: width 0.6s; 
-   
-}
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 25%; 
-}
-
