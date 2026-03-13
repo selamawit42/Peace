@@ -68,12 +68,12 @@
 .cert-info h3 {
     color: var(--primary-color);
     margin-bottom: 1rem;
-    font-size: 1.4rem;
+    font-size: 1.7rem;
     font-weight: 700;
 }
 
 .cert-info p {
-    font-size: 0.95rem;
+    font-size: 1.3rem;
     line-height: 1.6;
     color: var(--text-muted);
 }

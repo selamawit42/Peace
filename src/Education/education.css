@@ -56,13 +56,13 @@
     display: block;
     font-weight: 600;
     margin-bottom: 0.5rem;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     color: var(--text-main);
 }
 
 .edu-duration {
     display: inline-block;
-    font-size: 0.9rem;
+    font-size: 1.3rem;
     color: var(--secondary-color);
     margin-bottom: 1.5rem;
     padding: 0.4rem 1rem;
@@ -72,7 +72,7 @@
 }
 
 .edu-card p {
-    font-size: 1rem;
+    font-size: 1.3rem;
     line-height: 1.6;
     color: var(--text-muted);
 }

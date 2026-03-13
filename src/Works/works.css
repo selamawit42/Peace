@@ -47,13 +47,13 @@
 .work-card h3 {
     color: var(--primary-color);
     margin-bottom: 0.5rem;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     font-weight: 700;
     letter-spacing: -0.01em;
 }
 
 .work-card h4 {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
     color: var(--text-main);
@@ -61,7 +61,7 @@
 
 .work-card .dates {
     display: inline-block;
-    font-size: 0.9rem;
+    font-size: 1.2rem;
     color: var(--secondary-color);
     margin-bottom: 1.5rem;
     padding: 0.4rem 1rem;
@@ -71,7 +71,7 @@
 }
 
 .work-card p {
-    font-size: 1rem;
+    font-size: 1.3rem;
     line-height: 1.6;
     color: var(--text-muted);
 }

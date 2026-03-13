@@ -13,7 +13,7 @@
 }
 
 .contact-form {
-    max-width: 600px;
+    max-width: 800px;
     width: 90%;
     margin: 0 auto;
     display: flex;
@@ -36,8 +36,8 @@
     color: var(--text-main);
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 0.8rem;
-    padding: 1.2rem;
-    font-size: 1rem;
+    padding: 1.1rem;
+    font-size: 1.3rem;
     width: 100%;
     outline: none;
     font-family: inherit;
@@ -63,7 +63,7 @@
     border: none;
     border-radius: 0.8rem;
     padding: 1.2rem;
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     font-weight: 700;
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -93,7 +93,7 @@
     border: 1px solid var(--glass-border);
     border-radius: 50%;
     color: var(--text-main);
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     text-decoration: none;
