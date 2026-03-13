@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './navbar.css';
-import logo from 'E:/React/my-portfolio/src/assets/MyLogo.png';
-import contactImg from 'E:/React/my-portfolio/src/assets/contact.png';
+import logo from '../assets/MyLogo.png';
+import contactImg from '../assets/contact.png';
 import menu from '../assets/menu.png';
 
 const Navbar = () => {
